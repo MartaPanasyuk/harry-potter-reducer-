@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectAllHouses } from "../../store/houses/selectors";
-import { selectAllHouseswithCharacters } from "../../store/selectors";
+import {
+  selectAllHouseswithCharacters,
+  selectAllCharactersFromOneHouse,
+} from "../../store/selectors";
 import "./style.css";
 
 //const houses = useSelector(selectAllHouses);
 
 function HouseList() {
   const result = useSelector(selectAllHouseswithCharacters);
-  const [nameHouse, setnameHouse] = useState("");
+  const [nameHouse, setnameHouse] = useState(result[0].name);
+  const filteredChars = useSelector(selectAllCharactersFromOneHouse(nameHouse));
+
+  console.log("filteredChars", filteredChars);
   return (
     <div>
       <h1>List og Houses:</h1>
