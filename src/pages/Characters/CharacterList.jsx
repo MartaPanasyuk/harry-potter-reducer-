@@ -5,9 +5,13 @@ import "./style.css";
 
 function CharacterList() {
   const characters = useSelector(selectAllCharacters);
-  return (
-    <div>
-      <h2> Our Character List</h2>
+  return <div></div>;
+}
+
+export default CharacterList;
+
+/*
+<h2> Our Character List</h2>
       {characters.map((char) => {
         return (
           <div key={char.id}>
@@ -17,8 +21,4 @@ function CharacterList() {
           </div>
         );
       })}
-    </div>
-  );
-}
-
-export default CharacterList;
+*/

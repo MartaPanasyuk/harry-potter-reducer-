@@ -3,17 +3,17 @@ export const selectAllHouseswithCharacters = (reduxState) => {
   const allCharacters = [...reduxState.character.allCharacters];
 
   const houseWithChar = houses.map((house) => {
-    const charactersName = house.characters.map((charId) => {
+    const getOneChar = house.characters.map((charId) => {
       const thisChar = allCharacters.find(
         (character) => character.id === charId
-      ).name;
+      );
       return thisChar;
     });
 
     return {
       id: house.id,
       name: house.name,
-      characters: charactersName,
+      characters: getOneChar,
     };
   });
   return houseWithChar;
