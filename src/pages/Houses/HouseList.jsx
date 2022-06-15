@@ -26,19 +26,14 @@ function HouseList() {
         ))}
       </select>
 
-      {console.log("my result new", result)}
-      {result.map((res) => {
+      {console.log("my result new", filteredChars)}
+      {filteredChars.characters.map((filteredchar, index) => {
         return (
-          <div>
-            <h3>{res.name}</h3>
-            {res.characters.map((char) => {
-              return (
-                <div>
-                  <h2>{char.name}</h2>
-                  <img src={char.image} className="img" />
-                </div>
-              );
-            })}
+          // where to put the key?
+          <div key={filteredchar.id}>
+            <h3>{filteredchar.name}</h3>
+            <img src={filteredchar.image} className="img" />
+            <p>{filteredchar.quote}</p>
           </div>
         );
       })}

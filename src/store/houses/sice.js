@@ -15,7 +15,7 @@ const initialState = {
     {
       id: 3,
       name: "Ravenclaw",
-      characters: [1, 2],
+      characters: [1],
     },
     {
       id: 4,

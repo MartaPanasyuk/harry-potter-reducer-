@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import characterReducer from "./characters/slice";
-import houseReducar from "./houses/sice";
+import houseReducer from "./houses/sice";
+import userReducer from "./user/slice";
 
 const store = configureStore({
   reducer: {
     character: characterReducer,
-    house: houseReducar,
+    house: houseReducer,
+    user: userReducer,
   },
 });
 

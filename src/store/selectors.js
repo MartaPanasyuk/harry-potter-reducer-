@@ -34,3 +34,17 @@ export const selectAllCharactersFromOneHouse = (houseName) => (reduxState) => {
     characters: charsFromHouse,
   };
 };
+
+export const nameOfFavChar = (reduxState) => {
+  //user.favorites ==[1,2]
+  const userFav = reduxState.user.favorites;
+  //allChar
+  const listOfChar = reduxState.character.allCharacters;
+
+  const charName = userFav.map((charId) => {
+    const theCharacter = listOfChar.find((c) => c.id === charId);
+    return theCharacter.name;
+  });
+  return charName;
+  //return ["Hermiona", "marta"]
+};
