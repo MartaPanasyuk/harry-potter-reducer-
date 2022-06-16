@@ -1,9 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postsFetched } from "../../store/posts/slice";
 import { selectPosts } from "../../store/posts/selectors";
 import { fetchPosts } from "../../store/posts/thunks";
+import { Link } from "react-router-dom";
 
 const API_URL = `https://hp-assessment-api.herokuapp.com`;
 
@@ -15,6 +15,7 @@ export default function HomePage() {
     dispatch(fetchPosts);
   }, []);
 
+  console.log("info", posts);
   return !posts ? (
     <p>Loading</p>
   ) : (
@@ -24,7 +25,9 @@ export default function HomePage() {
         ? "Loading"
         : posts.map((post) => (
             <div key={post.id}>
-              <h3>{post.name}</h3>
+              <Link to={`/got/characters/${post.id}`}>
+                <h3>{post.name}</h3>
+              </Link>
             </div>
           ))}
     </div>
@@ -32,7 +35,7 @@ export default function HomePage() {
 }
 
 /*
- console.log("info", posts);
+ 
 
   const dispatch = useDispatch();
   async function fetchPosts() {

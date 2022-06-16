@@ -2,6 +2,7 @@ import "./App.css";
 import CharacterList from "./pages/Characters/CharacterList";
 import HouseList from "./pages/Houses/HouseList";
 import FetchData from "./pages/FetchingData/FetchData";
+import PostPage from "./pages/FetchingData/PostPage";
 import { Routes, Route, Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<CharacterList />} />
         <Route path="/house" element={<HouseList />} />
         <Route path="/game" element={<FetchData />} />
+        <Route path="/got/characters/:id" element={<PostPage />} />
       </Routes>
     </div>
   );

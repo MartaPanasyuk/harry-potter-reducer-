@@ -26,7 +26,6 @@ function HouseList() {
         ))}
       </select>
 
-      {console.log("my result new", filteredChars)}
       {filteredChars.characters.map((filteredchar, index) => {
         return (
           // where to put the key?
@@ -42,3 +41,5 @@ function HouseList() {
 }
 
 export default HouseList;
+
+//console.log("my result new", filteredChars)

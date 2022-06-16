@@ -12,7 +12,7 @@ function CharacterList() {
   const useFavor = useSelector(userFavotites);
   const characters = useSelector(selectAllCharacters);
   const charNameFav = useSelector(nameOfFavChar);
-  console.log("charnameFav", charNameFav);
+  // console.log("charnameFav", charNameFav);
 
   return (
     <div>
