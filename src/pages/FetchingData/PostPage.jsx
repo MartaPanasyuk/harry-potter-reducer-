@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchPostById } from "../../store/posts/thunks";
 import { selectPostDetails } from "../../store/posts/selectors";
+import "./style.css";
 
 export default function PostPage() {
   const params = useParams();
@@ -19,7 +20,10 @@ export default function PostPage() {
     <p>Loading</p>
   ) : (
     <div>
-      <h2>Our Details</h2> <p>{postDetails.name}</p>
+      <h2>Our Details</h2>
+      <p>{postDetails.name}</p>
+      <p>Age: {postDetails.age}</p>
+      <img src={postDetails.imageUrl} className="img" />
     </div>
   );
 }
